@@ -9,5 +9,5 @@ RUN apt-get update && \
 	apt-get clean
 RUN mkdir gendev
 COPY . gendev/
-RUN bash -c "cd gendev && make && make install && rm -rf /tmp/*"
+RUN bash -c "cd gendev && make build install && rm -rf /tmp/*"
 CMD /bin/bash
