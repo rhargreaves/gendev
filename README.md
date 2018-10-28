@@ -1,4 +1,4 @@
-GENDEV - Genesis development environment for Linux.
+# GENDEV - Genesis development environment for Linux. [![CircleCI](https://circleci.com/gh/rhargreaves/gendev.svg?style=svg)](https://circleci.com/gh/rhargreaves/gendev)
 
 Gendev exists to setup a Linux (or presumably other Unix) system for Sega
 Genesis development. Gendev is not intended to replace, but to be a companion project to the SGDK
