@@ -4,7 +4,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
 	apt-get install -y \
 	build-essential wget unzip \
-	unrar-free texinfo \
+	unrar-free texinfo file \
 	git openjdk-8-jre-headless && \
 	apt-get clean
 RUN mkdir gendev
