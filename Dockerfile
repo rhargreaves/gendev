@@ -22,11 +22,13 @@ RUN apt-get update && \
 
 #RUN bash -c "git clone https://github.com/kubilus1/gendev.git && cd gendev && make && rm -rf /tmp/*"
 WORKDIR /work
-COPY tools /work/tools/
 COPY Makefile /work/
-COPY sgdk /work/sgdk/
 COPY toolchain /work/toolchain/
-RUN make
+RUN make toolchain_build
+COPY tools /work/tools/
+RUN make tools_build
+COPY sgdk /work/sgdk/
+RUN make sgdk_build
 RUN make install
 
 FROM ubuntu:bionic
@@ -43,4 +45,4 @@ ENV PATH $GENDEV/bin:$PATH
 
 WORKDIR /src
 
-ENTRYPOINT make -f $GENDEV/sgdk/mkfiles/makefile.gen 
+ENTRYPOINT make -f $GENDEV/sgdk/mkfiles/makefile.gen
